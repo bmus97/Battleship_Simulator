@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <style>
+            /* Global */
+            * {
+                font-family:'Black Ops One'; /* font */
+            }
+
+            body {
+                background: #222222  /* background color */
+            }
+
+            .title {
+                text-align: center;
+                color: lime;
+                font-size: 75px;
+                margin-top: 70px;
+                margin-bottom: 0;
+            }
+
+            .leftContainer {
+                display: flex;
+                flex-direction: column;
+                color: red;
+                margin-left: 200px;
+            }
+
+            .rightContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- "Strategy" -->
+            <h1 class="title">STRATEGY</h1>
+
+            <!-- Left side of screen/where batteships are-->
+            <div class="leftContainer">
+
+                <!-- "Place Battleships"-->
+                <h2 class="decsription">PLACE BATTLESHIPS</h2>
+                
+                <!-- Battleships -->
+                <div class="battleships">
+
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="board">
+                <div id="grid" class="grid"></div>
+                <!-- use javascript to create cells -->
+            </div>
+
+
+            <!-- Right side of screen where buttons are-->
+            <div class="rightContainer">
+                <!--<button id="reset" class="button">RESET</button>-->
+                <!--<button id="start" class="button">START</button>-->
+            </div>
+        </div>
+    </body>
+</html>
