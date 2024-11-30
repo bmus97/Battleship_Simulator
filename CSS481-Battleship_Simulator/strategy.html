@@ -1,55 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
-        <style>
-            /* Global */
-            * {
-                font-family:'Black Ops One'; /* font */
-            }
 
-            body {
-                background: #222222  /* background color */
-            }
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global */
+        * {
+            font-family: 'Black Ops One';
+            /* font */
+        }
 
-            .title {
-                text-align: center;
-                color: lime;
-                font-size: 75px;
-                margin-top: 70px;
-                margin-bottom: 0;
-            }
+        body {
+            background: #222222
+                /* background color */
+        }
 
-            .leftContainer {
-                display: flex;
-                flex-direction: column;
-                color: red;
-                margin-left: 200px;
-            }
+        .title {
+            text-align: center;
+            color: lime;
+            font-size: 75px;
+            margin-top: 70px;
+            margin-bottom: 0;
+        }
 
-            .rightContainer {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+        .leftContainer {
+            display: flex;
+            flex-direction: column;
+            color: red;
+            margin-left: 150px;
+            width: 20%;
+        }
 
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <!-- "Strategy" -->
-            <h1 class="title">STRATEGY</h1>
+        .rightContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%;
+        }
 
-            <!-- Left side of screen/where batteships are-->
+        .strat-button {
+            background-color: #222222;
+            color: lime;
+            border-radius: 5px;
+            border: 1px solid lime;
+            width: 70px;
+            height: 25px;
+        }
+
+        .reset-button {
+            margin-top: 10px;
+        }
+
+        .strat-container,
+        .battleships {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .description {
+            margin-top: 0px;
+            font-size: 18px;
+        }
+
+        /* temporary to see the spacing for the othher elements */
+        .board {
+            width: 400px;
+            height: 400px;
+        }
+
+        .ship {
+            width: 20px;
+            background-color: #74756f;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            align-self: flex-start;
+        }
+
+        .ship-dot {
+            border-radius: 50%;
+            background-color: black;
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- "Strategy" -->
+        <h1 class="title">STRATEGY</h1>
+
+        <!-- Left side of screen/where batteships are-->
+
+        <div class="strat-container">
             <div class="leftContainer">
 
                 <!-- "Place Battleships"-->
-                <h2 class="decsription">PLACE BATTLESHIPS</h2>
-                
+                <h2 class="description">PLACE BATTLESHIPS</h2>
+
                 <!-- Battleships -->
                 <div class="battleships">
-
+                    <div class="ship carrier">
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                    </div>
+                    <div class="ship battleship">
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                    </div>
+                    <div class="ship cruiser">
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                    </div>
+                    <div class="ship destroyer">
+                        <div class="ship-dot"></div>
+                        <div class="ship-dot"></div>
+                    </div>
                 </div>
             </div>
 
@@ -62,9 +137,12 @@
 
             <!-- Right side of screen where buttons are-->
             <div class="rightContainer">
-                <!--<button id="reset" class="button">RESET</button>-->
-                <!--<button id="start" class="button">START</button>-->
+                <input type="button" value="Start" class="start-button strat-button">
+                <input type="button" value="Reset" class="reset-button strat-button">
             </div>
         </div>
-    </body>
+
+    </div>
+</body>
+
 </html>
