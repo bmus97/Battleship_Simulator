@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
@@ -11,33 +12,37 @@
             /* font */
         }
 
+
         body {
             background: #222222
                 /* background color */
         }
 
+
         .title {
             text-align: center;
             color: lime;
             font-size: 75px;
-            margin-top: 70px;
+            margin-top: 50px;
             margin-bottom: 0;
         }
+
 
         .leftContainer {
             display: flex;
             flex-direction: column;
             color: red;
-            margin-left: 150px;
+            margin-left: 120px;
             width: 20%;
         }
+
 
         .rightContainer {
             display: flex;
             flex-direction: column;
-            align-items: center;
             width: 20%;
         }
+
 
         .strat-button {
             background-color: #222222;
@@ -48,9 +53,11 @@
             height: 25px;
         }
 
+
         .reset-button {
             margin-top: 10px;
         }
+
 
         .strat-container,
         .battleships {
@@ -58,81 +65,128 @@
             flex-direction: row;
         }
 
+
         .description {
             margin-top: 0px;
             font-size: 18px;
         }
 
+
         /* temporary to see the spacing for the othher elements */
         .board {
-            width: 400px;
-            height: 400px;
+            display: flex;
+            width: 35%;
+            justify-content: center;
         }
 
+
         .ship {
-            width: 20px;
             background-color: #74756f;
-            margin: 10px;
+            /* margin: 10px; */
             border: 1px solid black;
             border-radius: 5px;
             align-self: flex-start;
+            position: absolute;
+
+
         }
 
-        .ship-dot {
+
+        .grid-dot {
             border-radius: 50%;
             background-color: black;
-            width: 10px;
-            height: 10px;
-            margin: 5px;
+            width: 15px;
+            height: 15px;
+        }
+
+
+        .ship-dot {
+            margin: 15px 5px;
+        }
+
+
+        .grid-cell {
+            border: 1px solid black;
+            background-color: #74756f;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* not used rn now but maybe in future */
+        .grid-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .grid-row {
+            display: flex;
+            flex-direction: row;
         }
     </style>
+    <script src="strategyPage.js"></script>
 </head>
+
 
 <body>
     <div class="container">
         <!-- "Strategy" -->
         <h1 class="title">STRATEGY</h1>
 
+
         <!-- Left side of screen/where batteships are-->
+
 
         <div class="strat-container">
             <div class="leftContainer">
-
                 <!-- "Place Battleships"-->
                 <h2 class="description">PLACE BATTLESHIPS</h2>
 
+
                 <!-- Battleships -->
                 <div class="battleships">
-                    <div class="ship carrier">
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
+                    <div class="ship" id="carrier">
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
                     </div>
-                    <div class="ship battleship">
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
+                    <div class="ship" id="battleship">
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
                     </div>
-                    <div class="ship cruiser">
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
+                    <div class="ship" id="cruiser">
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
                     </div>
-                    <div class="ship destroyer">
-                        <div class="ship-dot"></div>
-                        <div class="ship-dot"></div>
+                    <div class="ship" id="submarine">
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
+                    </div>
+                    <div class="ship" id="destroyer">
+                        <div class="grid-dot ship-dot"></div>
+                        <div class="grid-dot ship-dot"></div>
                     </div>
                 </div>
             </div>
+
 
             <!-- Game Board -->
             <div class="board">
                 <div id="grid" class="grid"></div>
                 <!-- use javascript to create cells -->
             </div>
+
+
 
 
             <!-- Right side of screen where buttons are-->
@@ -142,7 +196,9 @@
             </div>
         </div>
 
+
     </div>
 </body>
+
 
 </html>
