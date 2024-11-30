@@ -102,7 +102,7 @@
                 <img src= "noProfilePicture.png" class="profilePicture"/>
     
                 <!-- Sign-in Button -->
-                <input type= "button" value= "SIGN IN" class="signInButton"></br>
+                <input type= "button" value= "SIGN IN" id="signInButton" class="signInButton"></br>
             </div>
 
             <!-- Battleship Image -->
@@ -123,10 +123,13 @@
             <!-- Create Profile Button -->
             <input type= "button" value= "CREATE PROFILE" id="createProfileButton" class="menuButton">
 
-            <a href="strategy.html">strategy</a>
         </div>
 
         <script>
+            document.getElementById('signInButton').addEventListener('click', function() {
+                window.location.href = 'profile.html';
+            });
+
             document.getElementById('playButton').addEventListener('click', function() {
                 window.location.href = 'strategy.html';
             });
