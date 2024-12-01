@@ -120,7 +120,7 @@
     <body>
         <div class="findGameContainer">
             <!-- X button -->
-            <button class="closeButton">X</button>
+            <button class="closeButton" id="backButton">X</button>
             
             <!-- "Friends List" -->
             <h1 class="title">FIND GAME</h1>
@@ -153,16 +153,22 @@
             <p class="line"></p>
 
             <!-- Join By Code -->
-                <div>
-                    <label class="label">Join by code:</label>
-                    <input type="text" id="code" name="code">
+            <div>
+                <label class="label">Join by code:</label>
+                <input type="text" id="code" name="code">
                          
-                    <!-- Add Button -->
-                    <input type= "button" value="JOIN GAME" class="hostButton"></br>
+                <!-- Add Button -->
+                <input type= "button" value="JOIN GAME" class="hostButton"></br>
     
-                    <!-- "Enter friend username." -->
-                    <p class="description3">Enter game code.</p>
-                </div>
+                <!-- "Enter friend username." -->
+                <p class="description3">Enter game code.</p>
+            </div>
+
+            <script>
+                    document.getElementById('backButton').addEventListener('click', function() {
+                            window.location.href = 'titleScreen.html';
+                    });
+            </script>
     </body>
 </html>
 

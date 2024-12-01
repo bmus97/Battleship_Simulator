@@ -115,7 +115,7 @@
         <div class="profileContainer">
 
             <!-- X button -->
-            <button class="closeButton">X</button>
+            <button class="closeButton" id="backButton">X</button>
 
             <!-- Profile Image -->
             <img src= "noProfilePicture.png" class="profilePicture"/>
@@ -133,10 +133,11 @@
             <input type= "button" value= "FRIENDS LIST" class="friendsListButton"></br> 
 
         </div>
+        
+        <script>
+            document.getElementById('backButton').addEventListener('click', function() {
+                    window.location.href = 'titleScreen.html';
+            });
+        </script>
     </body>
-    <script>
-
-    </script>
-
-
 </html>

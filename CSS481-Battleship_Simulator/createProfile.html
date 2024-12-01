@@ -140,7 +140,7 @@
         <div class="createProfileContainer">
 
             <!-- X button -->
-            <button class="closeButton">X</button>
+            <button class="closeButton" id="backButton">X</button>
 
             <!-- "Create Profile" -->
             <h1 class="title">CREATE PROFILE</h1>
@@ -169,10 +169,11 @@
             <input type= "button" value= "CREATE PROFILE" class="createProfileButton">
 
         </div>
+        
+        <script>
+            document.getElementById('backButton').addEventListener('click', function() {
+                    window.location.href = 'titleScreen.html';
+            });
+        </script>
     </body>
-    <script>
-
-    </script>
-
-
 </html>

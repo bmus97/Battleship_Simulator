@@ -36,6 +36,7 @@
 
             .profilePicture {
                 width: 75px; /* width of pfp */
+                cursor: pointer;
             }
 
             .signInButton {
@@ -99,7 +100,7 @@
         <div class="titleContainer">
             <div class="profileSection">
                 <!-- Profile Image -->
-                <img src= "noProfilePicture.png" class="profilePicture"/>
+                <img src= "noProfilePicture.png" class="profilePicture" id="profileButton"/>
     
                 <!-- Sign-in Button -->
                 <input type= "button" value= "SIGN IN" id="signInButton" class="signInButton"></br>
@@ -126,12 +127,16 @@
         </div>
 
         <script>
-            document.getElementById('signInButton').addEventListener('click', function() {
+            document.getElementById('profileButton').addEventListener('click', function() {
                 window.location.href = 'profile.html';
             });
 
+            document.getElementById('signInButton').addEventListener('click', function() {
+                window.location.href = 'signIn.html';
+            });
+
             document.getElementById('playButton').addEventListener('click', function() {
-                window.location.href = 'strategy.html';
+                window.location.href = 'findGame.html';
             });
     
             document.getElementById('settingsButton').addEventListener('click', function() {

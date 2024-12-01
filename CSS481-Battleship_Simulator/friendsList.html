@@ -104,7 +104,7 @@
     <body>
         <div class="friendsListContainer">
             <!-- X button -->
-            <button class="closeButton">X</button>
+            <button class="closeButton" id="backButton">X</button>
             
             <!-- "Friends List" -->
             <h1 class="title">FRIENDS LIST</h1>
@@ -126,11 +126,12 @@
 
             <!-- "No friends added yet..."-->
             <p class="noFriends">No friends added yet...</p>
-
-            
         </div>
-    </body>
-    <script>
 
-    </script>
+        <script>
+            document.getElementById('backButton').addEventListener('click', function() {
+                    window.location.href = 'titleScreen.html';
+            });
+        </script>
+    </body>
 </html>
