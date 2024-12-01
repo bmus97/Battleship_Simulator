@@ -10,6 +10,7 @@
     initBoard();
     initShip();
   });
+  const shipRotateStatus = new Map();
 
   function initBoard() {
     let board = document.getElementById("grid");
@@ -30,21 +31,40 @@
       }
       board.appendChild(row);
     }
+    board.addEventListener("", () => {});
   }
 
   // initalizes ship to be draggable and at starting
   // positions
   function initShip() {
-    dragShip(document.getElementById("carrier"));
-    dragShip(document.getElementById("battleship"));
-    dragShip(document.getElementById("submarine"));
-    dragShip(document.getElementById("cruiser"));
-    dragShip(document.getElementById("destroyer"));
-    const ships = document.getElementsByClassName("ship");
+    dragShip(document.getElementById("carrier-y"));
+    dragShip(document.getElementById("carrier-x"));
+    dragShip(document.getElementById("battleship-y"));
+    dragShip(document.getElementById("battleship-x"));
+    dragShip(document.getElementById("submarine-y"));
+    dragShip(document.getElementById("submarine-x"));
+    dragShip(document.getElementById("cruiser-y"));
+    dragShip(document.getElementById("cruiser-x"));
+    dragShip(document.getElementById("destroyer-y"));
+    dragShip(document.getElementById("destroyer-x"));
+    const shipsY = document.getElementsByClassName("ship-y");
+    const shipsX = document.getElementsByClassName("ship-x");
     let initLeft = 130;
-    for (let ship of ships) {
+    for (let ship of shipsY) {
       ship.style.left = initLeft + 30 + "px";
       initLeft += 30;
+      ship.addEventListener("dblclick", () => {
+        rotateShip(ship);
+      });
+    }
+    initLeft = 130;
+    for (let ship of shipsX) {
+      ship.style.left = initLeft + 30 + "px";
+      initLeft += 30;
+      ship.classList.add("hide-ship");
+      ship.addEventListener("dblclick", () => {
+        rotateShip(ship);
+      });
     }
   }
 
@@ -82,6 +102,18 @@
       let newLeft = ship.offsetLeft - pos1;
       ship.style.top = newTop + "px";
       ship.style.left = newLeft + "px";
+      let shipId = ship.id;
+      if (shipId.includes("-x")) {
+        shipId = shipId.replace("-x", "-y");
+        let ship2 = document.getElementById(shipId);
+        ship2.style.top = newTop + "px";
+        ship2.style.left = newLeft + "px";
+      } else {
+        shipId = shipId.replace("-y", "-x");
+        let ship2 = document.getElementById(shipId);
+        ship2.style.top = newTop + "px";
+        ship2.style.left = newLeft + "px";
+      }
     }
 
     function closeShipDragHandler() {
@@ -89,4 +121,21 @@
       document.onmousemove = null;
     }
   }
+
+  function rotateShip(ship) {
+    let shipId = ship.id;
+    ship.classList.add("hide-ship");
+    if (shipId.includes("-x")) {
+      shipId = shipId.replace("-x", "-y");
+      let ship2 = document.getElementById(shipId);
+      ship2.classList.remove("hide-ship");
+    } else {
+      shipId = shipId.replace("-y", "-x");
+      let ship2 = document.getElementById(shipId);
+      ship2.classList.remove("hide-ship");
+    }
+  }
+
+  // to  do
+  function snapToGrid() {}
 })();
