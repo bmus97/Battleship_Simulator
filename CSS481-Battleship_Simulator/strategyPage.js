@@ -51,7 +51,44 @@
     }
   }
 
-  function initStart() {}
+  function initStart() {
+    const startBtn = document.getElementById("start-button");
+    startBtn.addEventListener("click", () => {
+      console.log(checkShipCoords());
+      if (checkShipCoords()) {
+        const gameGrid = gridRep;
+        sendGrid(gameGrid);
+      }
+    });
+  }
+
+  function checkShipCoords() {
+    for (let [shipKey, shipInfo] of shipData) {
+      if (!Array.isArray(shipInfo.coords) || shipInfo.coords.length === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  async function sendGrid(gameGrid) {
+    const data = { grid: gameGrid };
+
+    try {
+      const url = "/strategy";
+      const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        console.log("sent to server");
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.error("Error sending grid:", error);
+    }
+  }
 
   function initReset() {
     const resetBtn = document.getElementById("reset-button");
