@@ -9,6 +9,8 @@
   window.addEventListener("load", () => {
     initBoard();
     initShip();
+    initStart();
+    initReset();
   });
 
   // map for all the ship instances and their info
@@ -49,6 +51,41 @@
     }
   }
 
+  function initStart() {}
+
+  function initReset() {
+    const resetBtn = document.getElementById("reset-button");
+    resetBtn.addEventListener("click", () => {
+      const shipsY = document.getElementsByClassName("ship-y");
+      const shipsX = document.getElementsByClassName("ship-x");
+      let initLeft = 130;
+      let initTop = 180;
+      // move ships back to orginial positions
+      // and resets the map for the ships
+      for (let i = 0; i < shipsY.length; i++) {
+        shipsY[i].style.left = initLeft + 30 + "px";
+        shipsX[i].style.left = initLeft + 30 + "px";
+        shipsY[i].style.top = initTop + "px";
+        shipsX[i].style.top = initTop + "px";
+        initLeft += 30;
+        shipsX[i].classList.add("hide-ship");
+        shipsY[i].classList.remove("hide-ship");
+        let numDots = shipsY[i].getElementsByClassName("ship-cell");
+        let length = numDots.length;
+        let shipKey = shipsY[i].id.replace("-y", "");
+        shipData.set(shipKey, {
+          horizontal: false,
+          coords: [],
+          length: length,
+        });
+        console.log(shipsY[i].offsetTop);
+      }
+
+      // clears the 2d game grid
+      initGridRep();
+    });
+  }
+
   // initalizes ship to be draggable and at starting
   // positions
   function initShip() {
@@ -65,30 +102,29 @@
     const shipsY = document.getElementsByClassName("ship-y");
     const shipsX = document.getElementsByClassName("ship-x");
     let initLeft = 130;
-    for (let ship of shipsY) {
-      ship.style.left = initLeft + 30 + "px";
+    let initTop = 180;
+    for (let i = 0; i < shipsY.length; i++) {
+      shipsY[i].style.left = initLeft + 30 + "px";
+      shipsX[i].style.left = initLeft + 30 + "px";
+      shipsY[i].style.top = initTop + "px";
+      shipsX[i].style.top = initTop + "px";
       initLeft += 30;
-      ship.addEventListener("dblclick", (e) => {
+      shipsX[i].classList.add("hide-ship");
+      shipsY[i].addEventListener("dblclick", (e) => {
         removeShipSpace(e);
-        rotateShip(ship);
+        rotateShip(shipsY[i]);
       });
-      let numDots = ship.getElementsByClassName("ship-cell");
+      shipsX[i].addEventListener("dblclick", (e) => {
+        removeShipSpace(e);
+        rotateShip(shipsX[i]);
+      });
+      let numDots = shipsY[i].getElementsByClassName("ship-cell");
       let length = numDots.length;
-      let shipKey = ship.id.replace("-y", "");
+      let shipKey = shipsY[i].id.replace("-y", "");
       shipData.set(shipKey, {
         horizontal: false,
         coords: [],
         length: length,
-      });
-    }
-    initLeft = 130;
-    for (let ship of shipsX) {
-      ship.style.left = initLeft + 30 + "px";
-      initLeft += 30;
-      ship.classList.add("hide-ship");
-      ship.addEventListener("dblclick", (e) => {
-        removeShipSpace(e);
-        rotateShip(ship);
       });
     }
   }
