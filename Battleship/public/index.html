@@ -5,12 +5,17 @@
     <title>Battle Ships</title>
     <link rel="stylesheet" href="styles.css">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="app.js" charset="utf-8"></script>
   </head>
   <body>
 
     <button id="singlePlayerButton">Single Player</button>
     <button id="multiPlayerButton">Multiplayer</button>
+
+    <button id="createLobbyButton">Create Lobby</button>
+    <input type="text" id="lobbyCodeInput" placeholder="Enter Lobby Code">
+    <button id="joinLobbyButton">Join Lobby</button>
+    <div id="lobbyCodeDisplay"></div>
+    <div id="info"></div>
 
     <div class="player p1">
       Player 1
@@ -44,4 +49,5 @@
     </div>
 
   </body>
+  <script src="app.js" charset="utf-8"></script>
 </html>

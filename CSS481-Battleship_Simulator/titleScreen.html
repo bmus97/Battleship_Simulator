@@ -29,10 +29,11 @@
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0,3); /* shadow */
             }
 
-            .profileSection {
+             .profileSection { 
                 display: flex; /* align pfp and sign-in button */
                 gap: 5px; /* space between pfp and sign-in button */
-            }
+                margin-bottom: 60px; 
+            } 
 
             .profilePicture {
                 width: 75px; /* width of pfp */
@@ -90,7 +91,7 @@
             .simulator {
                 font-size: 100px;
                 margin-top: 0px;
-                margin-bottom: 30px;
+                margin-bottom: 80px;
                 color: #ced3d4;
                 text-align: center;
             }
@@ -100,10 +101,10 @@
         <div class="titleContainer">
             <div class="profileSection">
                 <!-- Profile Image -->
-                <img src= "noProfilePicture.png" class="profilePicture" id="profileButton"/>
+                <!-- <img src= "noProfilePicture.png" class="profilePicture" id="profileButton"/> -->
     
                 <!-- Sign-in Button -->
-                <input type= "button" value= "SIGN IN" id="signInButton" class="signInButton"></br>
+                <!-- <input type= "button" value= "SIGN IN" id="signInButton" class="signInButton"></br> -->
             </div>
 
             <!-- Battleship Image -->
@@ -122,18 +123,18 @@
             <input type= "button" value= "FRIENDS LIST" id="friendsButton" class="menuButton"></br>
 
             <!-- Create Profile Button -->
-            <input type= "button" value= "CREATE PROFILE" id="createProfileButton" class="menuButton">
+            <!-- <input type= "button" value= "CREATE PROFILE" id="createProfileButton" class="menuButton"> -->
 
         </div>
 
         <script>
-            document.getElementById('profileButton').addEventListener('click', function() {
-                window.location.href = 'profile.html';
-            });
+            // document.getElementById('profileButton').addEventListener('click', function() {
+                //window.location.href = 'profile.html';
+            //});
 
-            document.getElementById('signInButton').addEventListener('click', function() {
-                window.location.href = 'signIn.html';
-            });
+            //document.getElementById('signInButton').addEventListener('click', function() {
+            //    window.location.href = 'signIn.html';
+            //});
 
             document.getElementById('playButton').addEventListener('click', function() {
                 window.location.href = 'findGame.html';
