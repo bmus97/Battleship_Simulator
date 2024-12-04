@@ -32,7 +32,7 @@
             display: flex;
             flex-direction: column;
             color: red;
-            margin-left: 120px;
+
             width: 20%;
         }
 
@@ -41,6 +41,8 @@
             display: flex;
             flex-direction: column;
             width: 20%;
+            align-items: flex-start;
+            padding-left: 10px;
         }
 
 
@@ -54,7 +56,7 @@
         }
 
 
-        .reset-button {
+        #reset-button {
             margin-top: 10px;
         }
 
@@ -65,6 +67,9 @@
             flex-direction: row;
         }
 
+        .strat-container {
+            justify-content: center;
+        }
 
         .description {
             margin-top: 0px;
@@ -75,7 +80,6 @@
         /* temporary to see the spacing for the othher elements */
         .board {
             display: flex;
-            width: 35%;
             justify-content: center;
         }
 
@@ -305,8 +309,8 @@
 
             <!-- Right side of screen where buttons are-->
             <div class="rightContainer">
-                <input type="button" value="Start" class="start-button strat-button">
-                <input type="button" value="Reset" class="reset-button strat-button">
+                <input type="button" value="Start" id="start-button" class="strat-button">
+                <input type="button" value="Reset" id="reset-button" class="strat-button">
             </div>
         </div>
 
