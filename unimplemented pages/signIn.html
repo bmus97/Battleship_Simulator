@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family:'Black Ops One'; /* font */
+                color: #d9d9d9; /* font color */
+                background-color: #0a2c3d; /* background color */
+                display: flex; /* flexbox */
+                justify-content: center; /* center container horizontally */
+                align-items: center; /* center content vertically */
+                height: 100vh; /* 100% of viewport */
+            }
+
+            .signInContainer {
+                background: radial-gradient(circle, #2a6c8a 20%, #11445f 80%); /*  radient background color of container */
+                border-radius: 15px; /* rounded edges of container */
+                padding: 20px; 
+                position: relative;
+                min-height: 450px;
+                min-width: 300px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0,3); /* shadow */
+            }
+
+            .title {
+                text-align: center;
+                font-size: 30px;
+                margin: 0;
+                margin-bottom: 50px;
+            }
+
+            .closeButton {
+                background-color: red;
+                color: white;
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                border: none;
+                border-radius: 10%;
+                font-size: 15px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .closeButton:hover {
+                background-color: darkred;
+            }
+
+            label {
+                font-size: 18px;
+            }
+
+            input {
+                width: 280px;
+                padding: 5px;
+                margin-bottom: 30px;
+            }
+
+            .signInButton {
+                width: 100px; /* width of button */
+                height: 50px; /* height of button */
+                padding: 10px;
+                font-size: 20px; /* font size */
+                border: 4px solid black; /* border size + color */
+                border-radius: 12px; /* round corners on button */
+                background-color: #d9d9d9; /* button color */
+                margin-top: 10px; /* space between top of screen and button */
+                cursor: pointer;
+                font-family:'Impact'; /* font */;
+                margin-left: 100px;
+                margin-bottom: 40px;
+            
+            }
+
+            .signInButton:hover {
+                background-color: #b0b0b0; /* buttons change color when hovered */
+            }
+
+            a {
+                margin-left: 60px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: #d9d9d9;
+            }
+
+            p {
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: #d9d9d9;
+            }
+
+        
+        </style>
+    </head>
+    <body>
+        <div class="signInContainer">
+
+            <!-- X button -->
+            <button class="closeButton" id="backButton">X</button>
+            
+            <!-- "Sign In" -->
+            <h1 class="title">SIGN IN</h1>
+
+            <!-- Username: -->
+            <div>
+                <label for="username">Username:</label><br>
+                <input type="text" for="username" placeholder="Enter username">
+            </div>
+
+             <!-- Password: -->
+             <div>
+                <label for="password">Password:</label><br>
+                <input type="text" for="password" placeholder="Enter password">
+            </div>
+
+            <!-- Sign In Button -->
+            <input type= "button" value="SIGN IN" class="signInButton"><br>
+
+            <!-- Create a profile link -->
+            <p><a href="createProfile.html">CLICK HERE</a> to create a profile</p>
+    </body>
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'titleScreen.html';
+        });
+    </script>
+</html>
+

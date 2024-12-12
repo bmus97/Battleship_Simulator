@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global */
+        * {
+            font-family: 'Black Ops One';
+            /* font */
+        }
+
+
+        body {
+            background: #222222
+                /* background color */
+        }
+
+
+        .title {
+            text-align: center;
+            color: lime;
+            font-size: 75px;
+            margin-top: 50px;
+            margin-bottom: 0;
+        }
+
+
+        .leftContainer {
+            display: flex;
+            flex-direction: column;
+            color: red;
+            margin-left: 120px;
+            width: 20%;
+        }
+
+
+        .rightContainer {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+        }
+
+
+        .strat-button {
+            background-color: #222222;
+            color: lime;
+            border-radius: 5px;
+            border: 1px solid lime;
+            width: 70px;
+            height: 25px;
+        }
+
+
+        .reset-button {
+            margin-top: 10px;
+        }
+
+
+        .strat-container,
+        .battleships {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+        .description {
+            margin-top: 0px;
+            font-size: 18px;
+        }
+
+
+        /* temporary to see the spacing for the othher elements */
+        .board {
+            display: flex;
+            width: 35%;
+            justify-content: center;
+        }
+
+
+        .ship-y,
+        .ship-x {
+            background-color: #74756f;
+            /* margin: 10px; */
+            border: 1px solid black;
+            border-radius: 5px;
+            align-self: flex-start;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+        .ship-x {
+            display: flex;
+
+        }
+
+        .grid-dot {
+            border-radius: 50%;
+            background-color: black;
+            width: 15px;
+            height: 15px;
+        }
+
+
+
+        .ship-cell,
+        .ship-cell-x {
+            width: 25px;
+            height: 35px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+        }
+
+        .ship-cell-x {
+            width: 35px;
+            height: 25px;
+        }
+
+        .grid-cell {
+            border: 1px solid black;
+            background-color: #74756f;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* not used rn now but maybe in future */
+        .grid-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .grid-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .hide-ship {
+            display: none;
+        }
+    </style>
+    <script src="strategyPage.js"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <!-- "Strategy" -->
+        <h1 class="title">STRATEGY</h1>
+
+        <div class="strat-container">
+            <!-- Left side of screen/where batteships are-->
+
+            <div class="leftContainer">
+                <!-- "Place Battleships"-->
+                <h2 class="description">PLACE BATTLESHIPS</h2>
+
+                <!-- Battleships -->
+                <div class="battleships">
+                    <div class="ship-y" id="carrier-y">
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+                    <div class="ship-y" id="battleship-y">
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+
+                    </div>
+                    <div class="ship-y" id="cruiser-y">
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+                    <div class="ship-y" id="submarine-y">
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+                    <div class="ship-y" id="destroyer-y">
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- hidden horiontal ships -->
+                    <div class="ship-x" id="carrier-x">
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+                    <div class="ship-x" id="battleship-x">
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+
+                    </div>
+                    <div class="ship-x" id="cruiser-x">
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+                    <div class="ship-x" id="submarine-x">
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+                    <div class="ship-x" id="destroyer-x">
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                        <div class="ship-cell-x">
+                            <div class="grid-dot ship-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="board">
+                <div id="grid" class="grid"></div>
+                <!-- use javascript to create cells -->
+            </div>
+
+            <!-- Right side of screen where buttons are-->
+            <div class="rightContainer">
+                <input type="button" value="Start" class="start-button strat-button">
+                <input type="button" value="Reset" class="reset-button strat-button">
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+
+</html>
