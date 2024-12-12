@@ -31,7 +31,7 @@ To run the game do the following in the terminal:
 npm run dev
 ```
 ### Opening the Battleship page
-Then open up the browser to [localhost:3000](localhost:3000) and the following screen is shown.
+Then open up the browser to [localhost:3000](http://localhost:3000) and the following screen is shown.
 
 ![Battleship Title Screen](project_images/battleship_title_screen.jpg?raw=true "Battleship Title Screen")
 
