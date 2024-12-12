@@ -40,7 +40,7 @@ To play click the play button and this will bring you the game screen.
 
 ![Battleship Game Screen](project_images/game_screen.jpg?raw=true "Battleship Game Screen")
 
-Here you can click on single player and set up your ships by dragging them to the grid and rotate them by clicking "ROTATE SHIPS" which will rotate all the ships off the grid.
+Here you can click on single player and set up your ships by dragging them to the grid and rotate them by clicking "ROTATE SHIPS" which will rotate all the ships off the grid. (Current Bug: where ships can be placed on top of each other)
 ### Rotate Ships
 ![Battleship Rotate Ships](project_images/battleship_rotate.jpg?raw=true "Battleship Rotate Ships")
 ### Setting Ships
@@ -63,7 +63,7 @@ To join the lobby another user hosted, the user first clicks on multiplayer and 
 ![Joining Battleship Game](project_images/joining_game.jpg?raw=true "Joining Battleship Game")
 
 ### Playing Multiplayer
-After joining the lobby both players have to set their ships and press start to ready for the game to begin. Once that is done the game has begun and the first turn of the game goes to the host of the lobby. Like single player the game functions the same with each turn a player can shoot the opposing grid on the right where red shows a hit on a ship and black meaning a shot miss. (Current bug where it shows both players that is their turn and the indicators above the grid are not displaying the correctly as green)
+After joining the lobby both players have to set their ships and press start to ready for the game to begin. Once that is done the game has begun and the first turn of the game goes to the host of the lobby. Like single player the game functions the same with each turn a player can shoot the opposing grid on the right where red shows a hit on a ship and black meaning a shot miss. (Current Bug: where it shows both players that is their turn and the indicators above the grid are not displaying the correctly as green and ships can be placed on each other)
 
 ![Playing Multiplayer](project_images/playing_multiplayer.jpg?raw=true "Joining Battleship Game")
 
